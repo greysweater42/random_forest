@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap 4 Website Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+  <link rel="stylesheet" type="text/css" href="/css/style.css">
+
+  <!-- highlightjs syntax highlighting -->
+  <link rel="stylesheet" href="/css/default.css">
+  <script src="/js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+  <!-- table of contents -->
+  <script src="/js/bootstrap-toc.js"></script>
+  <!-- table of contents -->
+  <link rel="stylesheet" href="/css/bootstrap-toc.css">
+
+<style>
+
+.article {
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    max-width: 1000px;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.sticky-top {
+  top: 60px;
+      float: left;
+}
+
+h2:target, h3:target, h4:target {
+  padding-top: 80px;
+}
+
+</style>
+
+
+  <script>
+  $(window).scroll(function() {
+    // 100 = The point you would like to fade the nav in.
+    if ($(window).scrollTop() > 100 ) {
+      $('.navbar').removeClass('navbar-hide');
+      $('.navbar').addClass('navbar-show');
+    } else {
+      $('.navbar').removeClass('navbar-show');
+      $('.navbar').addClass('navbar-hide');
+    };   	
+  });
+  </script>
+
+</head>
