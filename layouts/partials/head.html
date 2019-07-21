@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
   <title>Bootstrap 4 Website Example</title>
+
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   
@@ -11,27 +13,103 @@
   <!-- table of contents -->
   <link rel="stylesheet" href="/css/bootstrap-toc.css">
 
-  <!-- own stylesheet -->
-  <link rel="stylesheet" type="text/css" href="/css/style.css">
-
   <!-- highlightjs syntax highlighting -->
   <link rel="stylesheet" href="/css/default.css">
 
-<style>
+  <!-- own stylesheet -->
+  <link rel="stylesheet" type="text/css" href="/css/style.css">
+
+
+  <style>
+
+  /* TODO css: nicer look of dropdowns */
+/* https://stackoverflow.com/questions/24127521/change-bootstrap-navbar-background-color-and-font-color */
+  /* TODO css: when scrolling down, forest should be background of navbar and heading should disappear */
+.fakeimg {
+  height: 200px;
+  background: #aaa;
+}
+
+.navbar-show {
+  background-color: rgba(120, 120, 120, 1);
+}
+
+.navbar-hide {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.transition {    
+  -webkit-transition: all 0.5s ease-in-out;
+	-moz-transition: all 0.5s ease-in-out;
+	-o-transition: all 0.5s ease-in-out;
+	transition: all 0.5s ease-in-out;
+}
+
+/* TODO css: when small button invisible */
+
+/* TODO: nicer look when small */
+@media (min-width: 768px) {
+  .navbar-nav {
+    /* float:none; */
+    margin:0 auto;
+    /*display: block;*/
+    /*text-align: center;*/
+  }
+  
+  /*
+  .navbar-nav > li {
+    display: inline-block;
+    float:none;
+  }
+  */
+}
+
+.nav-link {
+  color: rgba(255, 255, 255, 0.8);
+  transition: 0.3s;
+}
+
+.nav-link:hover {
+  color: rgba(255, 255, 255, 1);
+}
+
+/* remove dropdown arrow */
+.dropdown-toggle::after {
+    display:none;
+}
+
+.dropdown-item {
+  color: rgba(255, 255, 255, 0.7);
+  padding-left: 10px;
+}
+
+.dropdown-item:hover {
+  color: rgba(255, 255, 255, 0.9);
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* TODO: each dropdown menu should have a different color from palette */
+/* TODO: dropdown list should appear with transition and with hover-on */
+.dropdown-menu {
+  background-color: rgba(20, 31, 34, 0.96);
+  border-radius: 3;
+  border: 0;
+}
+
 
 .article {
-    margin: auto;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    max-width: 1000px;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin: auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  max-width: 1000px;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .sticky-top {
   top: 60px;
-      float: left;
+  float: left;
 }
 
 h2:target, h3:target, h4:target {
@@ -39,11 +117,13 @@ h2:target, h3:target, h4:target {
 }
 
 .nav-link {
-    color: blue;
+  color: blue;
 }
 
+/* some minor change */
 
-</style>
+
+  </style>
 
 
 </head>
