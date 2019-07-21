@@ -2,31 +2,43 @@
 
 <!-- BODY -->
 <div class="container" style="margin-top:30px">
-  <div class="row">
-    <div class="col-sm-4">
-      <h2>About Me</h2>
-      <p>A regular everyday data scientist who's trying to manifest his hipsterity by coding in vim.</p>
 
-      <!-- icon of categories--><h3>Categories</h3>
+  <div class="row">
+
+    <div class="col-sm-4">
+
+      <h2>tomis9</h2>
+      or a regular everyday data scientist who's trying to manifest his hipsterity by coding in vim.
+
+      <h3>Categories</h3>
       <ul class="nav nav-pills flex-column">
-        {{range ($.Site.GetPage "taxonomyTerm" "categories").Pages }}
-            <li class="nav-item">
-                <a class="nav-link" style="color: black;" href="{{.Permalink}}">{{.Title}}</a>
-            </li>
+        {{ range ($.Site.GetPage "taxonomyTerm" "categories").Pages }}
+          <li class="nav-item">
+            <a class="nav-link" href="{{ .Permalink }}">{{ .Title }}</a>
+          </li>
         {{end}}
       </ul>
+
     </div>
+
     <div class="col-sm-8">
+
       <h2>Posts</h2>
-    {{ range .Pages }}
-        <p><a class="nav-link" style="color: black;" href="{{.Permalink}}">{{.Title}}</a></p>
-    {{end}}
+      {{ range .Pages }}
+        <a class="nav-link" href="{{ .Permalink }}">{{ .Title }}</a>
+      {{ end }}
+
     </div>
+
   </div>
+
 </div>
 
+
 <div class="jumbotron text-center" style="margin-bottom:0">
+
   <p>background image: a random forest</p>
+
 </div>
 
 {{ partial "footer.html" }}
