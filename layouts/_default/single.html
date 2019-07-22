@@ -1,5 +1,5 @@
-{{ partial "head.html" }}
-{{ partial "header.html" }}
+{{ partial "head.html" . }}
+{{ partial "header.html" . }}
 
 <nav id="toc" data-toggle="toc" class="sticky-top"></nav>
 
@@ -7,4 +7,4 @@
 {{ .Content }}
 </div>
 
-{{ partial "footer.html" }}
+{{ partial "footer.html" . }}

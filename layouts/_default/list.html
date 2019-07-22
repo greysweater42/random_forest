@@ -1,10 +1,10 @@
-{{ partial "head.html" }}
-{{ partial "header.html" }}
+{{ partial "head.html" . }}
+{{ partial "header.html" . }}
 
-{{ $paginator := .Paginate .Data.Pages.ByPublishDate.Reverse }}
+<nav id="toc" data-toggle="toc" class="sticky-top"></nav>
 
 {{ range .Pages }}
     <p><a class="nav-link" style="color: black;" href="{{.Permalink}}">{{.Title}}</a></p>
 {{end}}
 
-{{ partial "footer.html" }}
+{{ partial "footer.html" . }}

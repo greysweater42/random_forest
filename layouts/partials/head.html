@@ -14,13 +14,20 @@
   <link rel="stylesheet" href="/css/bootstrap-toc.css">
 
   <!-- highlightjs syntax highlighting -->
-  <link rel="stylesheet" href="/css/default.css">
+  <link rel="stylesheet" href="/css/darcula.css">
 
   <!-- own stylesheet -->
   <link rel="stylesheet" type="text/css" href="/css/style.css">
 
+  <!-- Ubuntu fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Ubuntu&display=swap" rel="stylesheet">        
+  <link href="https://fonts.googleapis.com/css?family=Ubuntu+Mono&display=swap" rel="stylesheet">
 
   <style>
+
+  .code {
+    font-family: 'Ubuntu Mono', monospace;
+  }
 
   /* TODO css: nicer look of dropdowns */
 /* https://stackoverflow.com/questions/24127521/change-bootstrap-navbar-background-color-and-font-color */
@@ -31,11 +38,12 @@
 }
 
 .navbar-show {
-  background-color: rgba(120, 120, 120, 1);
+  background-image: url('/random-forest2.jpg');
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .navbar-hide {
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: rgba(0, 0, 0, 0.35);
 }
 
 .transition {    
@@ -50,10 +58,7 @@
 /* TODO: nicer look when small */
 @media (min-width: 768px) {
   .navbar-nav {
-    /* float:none; */
     margin:0 auto;
-    /*display: block;*/
-    /*text-align: center;*/
   }
   
   /*
@@ -105,11 +110,40 @@
   padding: 20px;
   border-radius: 5px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  font-family: 'Ubuntu', sans-serif;
+  color: #313632;
 }
 
+#header {
+    margin-bottom:0; 
+    background-image: url('/random-forest2.jpg'); 
+    border-radius: 0; 
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#footer {
+    background-image: url('/random-forest2.jpg'); 
+    border-radius: 0; 
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin-bottom:0;
+    color: white;
+}
+
+#footer a:link, #footer a:visited {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+#footer a:hover, #footer a:active {
+  color: rgba(255, 255, 255, 1);
+  text-decoration: none;
+}
+
+
 .sticky-top {
-  top: 60px;
+  top: 75px;
+  margin-top: 15px;
   float: left;
+  font-family: 'Ubuntu', sans-serif;
 }
 
 h2:target, h3:target, h4:target {
@@ -117,7 +151,7 @@ h2:target, h3:target, h4:target {
 }
 
 .nav-link {
-  color: blue;
+  font-family: 'Ubuntu', sans-serif;
 }
 
 /* some minor change */
