@@ -3,32 +3,31 @@
 
 
 <!-- NAVBAR -->
-<nav class="navbar navbar-expand-md fixed-top navbar-hide transition" style="color: white;">
+<nav id="navbar" class="navbar navbar-expand-md fixed-top navbar-hide transition">
 
-  <!-- empty link for proper button display on small size screens -->
-  <a class="navbar-brand" href="#"></a>
-
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar" aria-expanded="false" aria-label="toggle navig">
-    <span class="navbar-toggler-icon" style="color: white;">Menu</span>
+  <button class="navbar-toggler" data-toggle="collapse" data-target="#collapsibleNavbar">
+    Menu
   </button>
 
   <div class="collapse navbar-collapse" id="collapsibleNavbar">
+
     <ul class="navbar-nav">
       <li class="nav-item">
-          <a class="nav-link" href="{{ $.Site.BaseURL }}">Home</a>
+        <a class="nav-link" href="{{ $.Site.BaseURL }}">Home</a>
       </li>
       {{ range $.Site.Menus.main }}
       {{ $current_cat := .Identifier }}
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" data-toggle="dropdown">{{ .Name }}</a>
         <div class="dropdown-menu">
-            {{ range sort (where $.Site.Pages "Params.categories" "intersect" (slice $current_cat)) "Title" }}
+          {{ range sort (where $.Site.Pages "Params.categories" "intersect" (slice $current_cat)) "Title" }}
             <a class="dropdown-item" href="{{ .Permalink }}">{{ .Title }}</a>
-            {{end}}
+          {{end}}
         </div>
       </li>
     {{ end }}
     </ul>
+
   </div>  
 
 </nav>
@@ -37,8 +36,10 @@
 <!-- HEADING -->
 <div class="jumbotron text-center" id="header">
 
-    <h1 style="color: white; margin: 0; margin-top: 50px;">{{ $.Site.Params.title }}</h1>
+  <div id="header-title">
+    {{ $.Site.Params.title }}
+  </div>
 
-    <p style="color: white;">{{ $.Site.Params.description }}</p> 
+  <p style="color: white;">{{ $.Site.Params.description }}</p> 
 
 </div>

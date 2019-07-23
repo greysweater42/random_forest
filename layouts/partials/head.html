@@ -23,6 +23,8 @@
   <link href="https://fonts.googleapis.com/css?family=Ubuntu&display=swap" rel="stylesheet">        
   <link href="https://fonts.googleapis.com/css?family=Ubuntu+Mono&display=swap" rel="stylesheet">
 
+<link href="https://fonts.googleapis.com/css?family=Fascinate&display=swap" rel="stylesheet">
+
   <!-- KaTeX -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/katex.min.css" integrity="sha384-yFRtMMDnQtDRO8rLpMIKrtPCD5jdktao2TV19YiZYWMDkUR5GQZR/NOVTdquEx1j" crossorigin="anonymous">
 
@@ -44,6 +46,10 @@
   background: #aaa;
 }
 
+#navbar {
+ color: white;
+}
+
 .navbar-show {
   background-image: url('/random-forest3.jpg');
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -53,11 +59,23 @@
   background-color: rgba(0, 0, 0, 0.35);
 }
 
+.navbar-toggler {
+  color: white;
+}
+
 .transition {    
   -webkit-transition: all 0.5s ease-in-out;
 	-moz-transition: all 0.5s ease-in-out;
 	-o-transition: all 0.5s ease-in-out;
 	transition: all 0.5s ease-in-out;
+}
+
+#header-title {
+    color: white; 
+    margin: 0; 
+    margin-top: 50px;
+    font-family: 'Fascinate', cursive;
+    font-size: 50px;
 }
 
 /* TODO css: when small button invisible */
@@ -100,7 +118,6 @@
   background-color: rgba(255, 255, 255, 0.1);
 }
 
-/* TODO: each dropdown menu should have a different color from palette */
 /* TODO: dropdown list should appear with transition and with hover-on */
 .dropdown-menu {
   background-color: rgba(20, 31, 34, 0.96);
@@ -122,11 +139,21 @@
   color: #313632;
 }
 
-.article a:link, .article a:visited {
+.list-div {
+  margin: auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  max-width: 1000px;
+  padding: 20px;
+  font-family: 'Ubuntu', sans-serif;
+  color: #313632;
+}
+
+.article a:link, .article a:visited, .list-div a:link, .list-div a:visited {
   color: rgba(49, 54, 50, 0.85);
 }
 
-.article a:hover, .article:active {
+.article a:hover, .article:active, .list-div a:hover, .list-div a:active {
   color: rgba(49, 54, 50, 1);
   text-decoration: none;
 }
