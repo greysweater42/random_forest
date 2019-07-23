@@ -3,8 +3,31 @@
 
 <nav id="toc" data-toggle="toc" class="sticky-top"></nav>
 
-{{ range .Pages }}
-    <p><a class="nav-link" style="color: black;" href="{{.Permalink}}">{{.Title}}</a></p>
-{{end}}
+<div class="article">
+  <div class="article-title">
+    <img src="/folder4.jpg" height="35" width="35"></img> {{ .Title }}
+  </div>
+
+  <!-- TODO do this with css -->
+  <p></p>
+
+  <center>
+  {{ range (.Data.Pages.GroupByDate "2006") }}
+  <h2>{{ .Key }}</h2>
+    {{ range .Pages }}
+      <table>
+        <tr>
+          <td style="width: 100px; color: gray; font-size: smaller;">{{ dateFormat "Jan 2, 2006" .Date }} </td>
+          <td style="width: 300px;"><a href="{{.Permalink}}"> {{.Title}} </a></td>
+          <!-- TODO if .ReadingTime == 1 "minute" else "minutes" -->
+          <td style="color: gray; font-size: small;">{{ .ReadingTime }} minutes read</td>
+        </tr>
+      </table>
+    {{end}}
+    <!-- TODO do this with css -->
+    <p></p>
+  {{end}}
+  </center>
+</div>
 
 {{ partial "footer.html" . }}

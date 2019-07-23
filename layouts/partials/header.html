@@ -9,7 +9,7 @@
   <a class="navbar-brand" href="#"></a>
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar" aria-expanded="false" aria-label="toggle navig">
-    <span class="navbar-toggler-icon"></span>
+    <span class="navbar-toggler-icon" style="color: white;">Menu</span>
   </button>
 
   <div class="collapse navbar-collapse" id="collapsibleNavbar">
@@ -37,8 +37,8 @@
 <!-- HEADING -->
 <div class="jumbotron text-center" id="header">
 
-  <h1 style="color: white;">My First Bootstrap 4 Page</h1>
+    <h1 style="color: white; margin: 0; margin-top: 50px;">{{ $.Site.Params.title }}</h1>
 
-  <p style="color: white;">Resize this responsive page to see the effect!</p> 
+    <p style="color: white;">{{ $.Site.Params.description }}</p> 
 
 </div>

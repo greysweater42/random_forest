@@ -8,26 +8,41 @@
 
     <div class="col-sm-4">
 
+        <div class="article">
+
       <h2>About me</h2>
       A regular everyday data scientist who's trying to manifest his hipsterity by coding in vim.
 
+      </div>
+
+        <div class="article">
       <h3>Categories</h3>
       <ul class="nav nav-pills flex-column">
         {{ range ($.Site.GetPage "taxonomyTerm" "categories").Pages }}
-          <li class="nav-item">
-            <a class="nav-link" href="{{ .Permalink }}">{{ .Title }}</a>
+          <li>
+            <a href="{{ .Permalink }}">{{ .Title }}</a>
           </li>
         {{end}}
       </ul>
+      </div>
 
     </div>
 
     <div class="col-sm-8">
 
-      <h2>Posts</h2>
-      {{ range .Pages }}
-        <a class="nav-link" href="{{ .Permalink }}">{{ .Title }}</a>
-      {{ end }}
+      <div class="article">
+        <h2>Posts</h2>
+        {{ range .Pages }}
+        <table>
+          <tr>
+            <td style="width: 100px; color: gray; font-size: smaller;">{{ dateFormat "Jan 2, 2006" .Date }} </td>
+            <td style="width: 300px;"><a href="{{.Permalink}}"> {{.Title}} </a></td>
+            <!-- TODO if .ReadingTime == 1 "minute" else "minutes" -->
+            <td style="color: gray; font-size: small;">{{ range .Params.categories }}{{ . }} {{ end }}</td>
+          </tr>
+        </table>
+        {{end}}
+      </div>
 
     </div>
 

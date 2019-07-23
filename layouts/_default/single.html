@@ -6,17 +6,19 @@
 <div class="article">
 
 <div class="article-categories">
-    {{ range .Params.categories }}
+  {{ range .Params.categories }}
+    <a href="{{ "categories/" | absLangURL }}{{ . | urlize }}" role="button"><img src="/folder4.jpg" width="20" height="20"></img></a>
         <a href="{{ "categories/" | absLangURL }}{{ . | urlize }}" role="button">{{ . }} </a>
-    {{end}}</br>
+        &emsp;
+  {{end}}</br>
 </div>
 <div class="article-title">
-    <!-- TODO https://codepen.io/zitrusfrisch/pen/fjbal -->
-    {{ .Title }}
+  <!-- TODO https://codepen.io/zitrusfrisch/pen/fjbal -->
+  {{ .Title }}
 
 </div>
 <div class="article-info">
-    {{ dateFormat "Jan 2, 2006" .Date }} &emsp; - &emsp; {{ .ReadingTime }} minutes read
+    {{ dateFormat "Jan 2, 2006" .Date }} &emsp;  &emsp; {{ .ReadingTime }} minutes read
 </div>
 
 {{ .Content }}

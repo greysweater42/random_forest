@@ -23,7 +23,14 @@
   <link href="https://fonts.googleapis.com/css?family=Ubuntu&display=swap" rel="stylesheet">        
   <link href="https://fonts.googleapis.com/css?family=Ubuntu+Mono&display=swap" rel="stylesheet">
 
+  <!-- KaTeX -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/katex.min.css" integrity="sha384-yFRtMMDnQtDRO8rLpMIKrtPCD5jdktao2TV19YiZYWMDkUR5GQZR/NOVTdquEx1j" crossorigin="anonymous">
+
   <style>
+
+  body {
+    background-color: rgb(240, 240, 240);
+  }
 
   .code {
     font-family: 'Ubuntu Mono', monospace;
@@ -38,7 +45,7 @@
 }
 
 .navbar-show {
-  background-image: url('/random-forest2.jpg');
+  background-image: url('/random-forest3.jpg');
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
@@ -110,8 +117,18 @@
   padding: 20px;
   border-radius: 5px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  background-color: rgb(245, 245, 245);
   font-family: 'Ubuntu', sans-serif;
   color: #313632;
+}
+
+.article a:link, .article a:visited {
+  color: rgba(49, 54, 50, 0.85);
+}
+
+.article a:hover, .article:active {
+  color: rgba(49, 54, 50, 1);
+  text-decoration: none;
 }
 
 .article-title {
@@ -128,19 +145,29 @@
     text-align: center;
 }
 
+.article-categories a:link, .article-categories a:visited {
+  color: rgba(80, 80, 80, 0.8);
+}
+
+.article-categories a:hover, .article-categories a:active {
+  color: rgba(80, 80, 80, 1);
+  text-decoration: none;
+}
+
+
 .article-info {
     margin-bottom: 50px;
 }
 
 #header {
     margin-bottom:0; 
-    background-image: url('/random-forest2.jpg'); 
+    background-image: url('/random-forest3.jpg'); 
     border-radius: 0; 
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 #footer {
-    background-image: url('/random-forest2.jpg'); 
+    background-image: url('/random-forest3.jpg'); 
     border-radius: 0; 
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     margin-bottom:0;
