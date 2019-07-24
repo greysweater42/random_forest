@@ -5,7 +5,10 @@
 <!-- NAVBAR -->
 <nav id="navbar" class="navbar navbar-expand-md fixed-top navbar-hide transition">
 
-  <button class="navbar-toggler" data-toggle="collapse" data-target="#collapsibleNavbar">
+  <!-- empty link for "Menu" on the right side -->
+  <a class="navbar-brand"></a>
+
+  <button class="navbar-toggler float-xs-right" data-toggle="collapse" data-target="#collapsibleNavbar">
     Menu
   </button>
 
@@ -19,7 +22,7 @@
       {{ $current_cat := .Identifier }}
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" data-toggle="dropdown">{{ .Name }}</a>
-        <div class="dropdown-menu">
+        <div class="dropdown-menu scrollable-menu">
           {{ range sort (where $.Site.Pages "Params.categories" "intersect" (slice $current_cat)) "Title" }}
             <a class="dropdown-item" href="{{ .Permalink }}">{{ .Title }}</a>
           {{end}}
@@ -37,7 +40,7 @@
 <div class="jumbotron text-center" id="header">
 
   <div id="header-title">
-    {{ $.Site.Params.title }}
+      <a href="{{ $.Site.BaseURL }}">{{ $.Site.Params.title }}</a>
   </div>
 
   <p style="color: white;">{{ $.Site.Params.description }}</p> 

@@ -1,15 +1,17 @@
 {{ partial "head.html" . }}
 {{ partial "header.html" . }}
 
-<nav id="toc" data-toggle="toc" class="sticky-top"></nav>
+<nav id="toc" data-toggle="toc" class="sticky-top d-none d-xl-block"></nav>
 
 <div class="article">
 
 <div class="article-categories">
   {{ range .Params.categories }}
-    <a href="{{ "categories/" | absLangURL }}{{ . | urlize }}" role="button"><img src="/folder4.jpg" width="20" height="20"></img></a>
-        <a href="{{ "categories/" | absLangURL }}{{ . | urlize }}" role="button">{{ . }} </a>
-        &emsp;
+    <a href="{{ "categories/" | absLangURL }}{{ . | urlize }}" role="button">
+      <object type="image/svg+xml" data="/folder.svg" height="15px" width="15px">.</object> 
+    </a>    
+    <a href="{{ "categories/" | absLangURL }}{{ . | urlize }}" role="button">{{ . }} </a>
+    &emsp;
   {{end}}</br>
 </div>
 <div class="article-title">
