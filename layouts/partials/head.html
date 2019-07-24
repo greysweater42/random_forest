@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
 
-  <title>Bootstrap 4 Website Example</title>
+  <title>{{ $.Site.Params.title }}</title>
+  <link rel="shortcut icon" type='image/x-icon' href="/favicon.ico"/>
 
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -262,6 +263,10 @@ h2:target, h3:target, h4:target {
 }
 
 .nav-item a:hover { cursor: pointer; }
+
+#all-posts-cats:link, #all-posts-cats:visited { color: rgb(120, 120, 120); font-style: italic; }
+
+#all-posts-cats:hover, #all-posts-cats:active { color: rgb(50, 50, 50); font-style: italic; }
 
 </style>
 

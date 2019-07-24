@@ -7,9 +7,7 @@
 
 <div class="article-categories">
   {{ range .Params.categories }}
-    <a href="{{ "categories/" | absLangURL }}{{ . | urlize }}" role="button">
-      <object type="image/svg+xml" data="/folder.svg" height="15px" width="15px">.</object> 
-    </a>    
+    <object style="vertical-align:middle" type="image/svg+xml" data="/folder.svg" height="15px" width="15px"></object> 
     <a href="{{ "categories/" | absLangURL }}{{ . | urlize }}" role="button">{{ . }} </a>
     &emsp;
   {{end}}</br>

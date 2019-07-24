@@ -52,9 +52,13 @@
                   <a href="{{.Permalink}}"> {{.Title}} </a>
               </td>
 
-              <!-- TODO if .ReadingTime == 1 "minute" else "minutes" -->
+              {{ $l_cat := len .Params.categories }}
+              {{ $l_cat := sub $l_cat 1 }}
               <td class="d-none d-lg-block d-xl-block" style="color: gray; font-size: small;">
-                  {{ range .Params.categories }}{{ . }} {{ end }}
+                {{ range $index, $category := .Params.categories }}
+                <a id="all-posts-cats" href="{{ "categories/" | absLangURL }}{{ . | urlize }}">{{ $category }}</a>
+                {{ if not (eq $index $l_cat)}},{{ end }} {{ end }}
+
               </td>
 
             </tr>
