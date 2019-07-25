@@ -19,7 +19,7 @@
         <a class="nav-link" href="{{ $.Site.BaseURL }}">Home</a>
       </li>
       {{ range $.Site.Menus.main }}
-      {{ $current_cat := .Identifier }}
+      {{ $current_cat := .Name }}
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" data-toggle="dropdown">{{ .Name }}</a>
         <div class="dropdown-menu scrollable-menu">

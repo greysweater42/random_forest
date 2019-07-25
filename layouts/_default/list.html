@@ -10,23 +10,35 @@
   </div>
 
   <!-- TODO do this with css -->
-  <p></p>
+  <br>
+  <br>
 
   <center>
   {{ range (.Data.Pages.GroupByDate "2006") }}
-  <h2>{{ .Key }}</h2>
+  <h3 style="text-shadow: -1px 0 #3090c7, 0 1px #3090c7, 1px 0 #3090c7, 0 -1px #3090c7; color: white; font-family: 'Fascinate', cursive;">{{ .Key }}</h3>
+
     {{ range .Pages }}
       <table>
         <tr>
-          <td style="width: 100px; color: gray; font-size: smaller;">{{ dateFormat "Jan 2, 2006" .Date }} </td>
-          <td style="width: 300px;"><a href="{{.Permalink}}"> {{.Title}} </a></td>
-          <!-- TODO if .ReadingTime == 1 "minute" else "minutes" -->
-          <td style="color: gray; font-size: small;">{{ .ReadingTime }} minutes read</td>
+          <td style="white-space: nowrap; width: 100px; color: gray; font-size: smaller;">
+            {{ dateFormat "Jan 2, 2006" .Date }} 
+          </td>
+          <td id="list-titles" style="width: 300px;"><a href="{{.Permalink}}"> {{.Title}} </a></td>
+          <td class="d-none d-lg-block d-xl-block" style="width: 150px; color: gray; font-size: small;">
+            {{ .ReadingTime }}
+            {{ if eq .ReadingTime 1 }} 
+              minute 
+            {{ else }} 
+              minutes 
+            {{ end }} 
+            read
+          </td>
         </tr>
       </table>
     {{end}}
     <!-- TODO do this with css -->
-    <p></p>
+    <br>
+    <br>
   {{end}}
   </center>
 </div>

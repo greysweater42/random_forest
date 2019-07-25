@@ -39,9 +39,6 @@
     font-family: 'Ubuntu Mono', monospace;
   }
 
-  /* TODO css: nicer look of dropdowns */
-/* https://stackoverflow.com/questions/24127521/change-bootstrap-navbar-background-color-and-font-color */
-  /* TODO css: when scrolling down, forest should be background of navbar and heading should disappear */
 .fakeimg {
   height: 200px;
   background: #aaa;
@@ -53,6 +50,7 @@
 
 .navbar-show {
   background-image: url('/random-forest3.jpg');
+  background-position: center-top; 
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
@@ -70,6 +68,7 @@
 .navbar-hide {
   background-color: none;
   background-image: url('/random-forest3.jpg'); 
+  background-position: center-top; 
 }
 
 #header-title {
@@ -84,22 +83,26 @@
     font-size: 50px;
 }
 
+.navbar {
+  overflow-x: hidden; 
+  max-height: 100%;
+}
+
 @media (min-width: 768px) {
-    .navbar-hide {
-      background-color: rgba(0, 0, 0, 0.35);
-      background-image: none;
-    }
+  .navbar-hide {
+    background-color: rgba(0, 0, 0, 0.15);
+    background-image: none;
+  }
 
   .navbar-nav {
     margin:0 auto;
   }
-  
-  /*
-  .navbar-nav > li {
-    display: inline-block;
-    float:none;
+
+  .navbar {
+    overflow: visible; 
+    max-height: 1000px;
   }
-  */
+
 }
 
 .scrollable-menu {
@@ -145,7 +148,6 @@
   background-color: rgba(255, 255, 255, 0.1);
 }
 
-/* TODO: dropdown list should appear with transition and with hover-on */
 .dropdown-menu {
   background-color: rgba(20, 31, 34, 0.96);
   border-radius: 3;
@@ -154,10 +156,24 @@
 
 #div-categories a:hover {
     padding-left: 3px;
-        transition: 0.1s;
+    transition: 0.1s;
 }
 
 .article {
+  background-color: rgb(245, 245, 245);
+  font-family: 'Ubuntu', sans-serif;
+  color: #313632;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+@media (min-width: 768px) {
+.article {
+  background-color: rgb(245, 245, 245);
+  font-family: 'Ubuntu', sans-serif;
+  color: #313632;
   margin: auto;
   margin-top: 20px;
   margin-bottom: 20px;
@@ -167,9 +183,7 @@
   padding-right: 60px;
   border-radius: 5px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  background-color: rgb(245, 245, 245);
-  font-family: 'Ubuntu', sans-serif;
-  color: #313632;
+}
 }
 
 .list-div {
@@ -187,13 +201,13 @@
   color: rgba(48, 144, 199, 1);
 }
 
-.article a:hover, .article:active, .list-div a:hover, .list-div a:active {
+.article a:hover, .article a:active, .list-div a:hover, .list-div a:active {
   color: rgba(0, 65, 194, 1);
   text-decoration: none;
 }
 
 .article-title {
-    font-size: 50px;
+    font-size: 40px;
     margin-top: 20px;
     margin-bottom: 20px;
     text-align: center;
@@ -223,6 +237,7 @@
 #header {
     margin-bottom:0; 
     background-image: url('/random-forest3.jpg'); 
+    background-position: center-top; 
     border-radius: 0; 
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     font-family: 'Ubuntu', sans-serif;
@@ -230,6 +245,7 @@
 
 #footer {
     background-image: url('/random-forest3.jpg'); 
+    background-position: center-top; 
     border-radius: 0; 
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     margin-bottom:0;
@@ -245,7 +261,6 @@
   color: rgba(255, 255, 255, 1);
   text-decoration: none;
 }
-
 
 .sticky-top {
   top: 75px;
@@ -267,6 +282,13 @@ h2:target, h3:target, h4:target {
 #all-posts-cats:link, #all-posts-cats:visited { color: rgb(120, 120, 120); font-style: italic; }
 
 #all-posts-cats:hover, #all-posts-cats:active { color: rgb(50, 50, 50); font-style: italic; }
+
+#all-posts-titles {width: 150px;}
+#list-titles {width: 150px;}
+@media (min-width: 768px) {
+  #all-posts-titles {width: 300px;}
+  #list-titles {width: 300px;}
+}
 
 </style>
 

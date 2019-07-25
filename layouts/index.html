@@ -22,11 +22,18 @@
           Categories
         </h3>
         <ul class="nav nav-pills flex-column">
-          {{ range ($.Site.GetPage "taxonomyTerm" "categories").Pages }}
+        {{ range $name, $taxonomy := .Site.Taxonomies.categories }}
+          {{ with $.Site.GetPage (printf "/categories/%s" $name) }}
             <li>
-              <a href="{{ .Permalink }}">{{ .Title }}</a>
-            </li>
-          {{end}}
+              <a href="{{ .Permalink }}">
+                {{ $name }} &emsp;
+                <font style="font-size: small; color: gray; font-style: italic;">
+                {{ $taxonomy.Count }} articles
+                </font>
+              </a>
+            </li> 
+          {{ end }}
+        {{ end }}
         </ul>
       </div>
 
@@ -44,19 +51,22 @@
 
             <tr>
 
-              <td style="width: 100px; color: gray; font-size: smaller;">
+              <td style="white-space: nowrap; width: 100px; color: gray; font-size: smaller;">
                   {{ dateFormat "Jan 2, 2006" .Date }} 
               </td>
 
-              <td style="width: 300px;">
+              <td id="all-posts-titles">
                   <a href="{{.Permalink}}"> {{.Title}} </a>
               </td>
 
               {{ $l_cat := len .Params.categories }}
               {{ $l_cat := sub $l_cat 1 }}
+
               <td class="d-none d-lg-block d-xl-block" style="color: gray; font-size: small;">
                 {{ range $index, $category := .Params.categories }}
-                <a id="all-posts-cats" href="{{ "categories/" | absLangURL }}{{ . | urlize }}">{{ $category }}</a>
+                  <a id="all-posts-cats" href="{{ "categories/" | absLangURL }}{{ . | urlize }}">
+                    {{ $category }}
+                  </a>
                 {{ if not (eq $index $l_cat)}},{{ end }} {{ end }}
 
               </td>
