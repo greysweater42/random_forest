@@ -26,7 +26,11 @@
           {{ with $.Site.GetPage (printf "/categories/%s" $name) }}
             <li>
               <a href="{{ .Permalink }}">
-                {{ $name }} &emsp;
+                {{ if eq $name "scratchpad" }}
+                  <font style="color: gray;"> {{ $name }} &emsp;</font>
+                {{ else }}
+                  {{ $name }} &emsp;
+                {{ end }}
                 <font style="font-size: small; color: gray; font-style: italic;">
                 {{ $taxonomy.Count }} articles
                 </font>
@@ -56,7 +60,13 @@
               </td>
 
               <td id="all-posts-titles">
-                  <a href="{{.Permalink}}"> {{.Title}} </a>
+                 <a href="{{.Permalink}}"> 
+                   {{ if intersect .Params.categories (slice "scratchpad") }} 
+                     <font style="color: gray;">{{ .Title }}</font>
+                   {{ else }} 
+                     {{ .Title }} 
+                   {{ end }}
+                 </a>
               </td>
 
               {{ $l_cat := len .Params.categories }}

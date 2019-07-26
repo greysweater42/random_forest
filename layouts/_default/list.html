@@ -1,7 +1,7 @@
 {{ partial "head.html" . }}
 {{ partial "header.html" . }}
 
-<nav id="toc" data-toggle="toc" class="sticky-top"></nav>
+<nav id="toc" data-toggle="toc" class="sticky-top d-none d-xl-block"></nav>
 
 <div class="list-div">
   <div class="article-title">
@@ -23,8 +23,12 @@
           <td style="white-space: nowrap; width: 100px; color: gray; font-size: smaller;">
             {{ dateFormat "Jan 2, 2006" .Date }} 
           </td>
-          <td id="list-titles" style="width: 300px;"><a href="{{.Permalink}}"> {{.Title}} </a></td>
-          <td class="d-none d-lg-block d-xl-block" style="width: 150px; color: gray; font-size: small;">
+          <td id="list-titles">
+            <a href="{{.Permalink}}"> 
+              {{.Title}} 
+            </a>
+          </td>
+          <td class="d-none d-lg-block d-xl-block" style="color: gray; font-size: small;">
             {{ .ReadingTime }}
             {{ if eq .ReadingTime 1 }} 
               minute 
